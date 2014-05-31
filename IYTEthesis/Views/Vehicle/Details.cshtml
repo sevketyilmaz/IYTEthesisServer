@@ -1,0 +1,39 @@
+﻿@model IYTEthesis.Model.Vehicle
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="Row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Vehicle's details</h4>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.NumberPlate) : </b> @Html.DisplayFor(model => model.NumberPlate)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Lat) : </b> @Html.DisplayFor(model => model.Lat)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.Lng) : </b> @Html.DisplayFor(model => model.Lng)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.LastUpdate) : </b> @Html.DisplayFor(model => model.LastUpdate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.VehicleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+</div>
+
+</div><!-- Row-->

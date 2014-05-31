@@ -1,0 +1,43 @@
+﻿@model IYTEthesis.Model.Driver
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="Row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Delete driver</h4>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+    <fieldset>
+    <legend>Are you sure you want to delete this?</legend>
+
+       <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.DriverName) : </b> @Html.DisplayFor(model => model.DriverName)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Email) : </b> @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.GSM) : </b> @Html.DisplayFor(model => model.GSM)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.DriverLicence) : </b> @Html.DisplayFor(model => model.DriverLicence)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+</div>
+
+</div><!--Row-->
+

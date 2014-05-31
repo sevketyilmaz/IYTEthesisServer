@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/bootstrap")
+    @RenderSection("headscript", required: false)
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-3">
+            <a href="@Url.Action("index", "Home")"><img src="~/Content/images/s.png"></a>
+        </div>
+        <div class="col-lg-9">
+        
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                   @*<li>@Html.ActionLink("Link", "Link", "Home")</li>*@
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("index", "Customer")">Customer's page</a></li>
+                        <li><a href="@Url.Action("index", "Owner")">Owner's page</a></li>
+                        <li><a href="@Url.Action("index", "Driver")">Driver's page</a></li>
+                        <li><a href="@Url.Action("index", "Vehicle")">Vehicle's page</a></li>
+                        
+                        @*<li class="divider"></li>
+                         <li><a href="#">Separated link</a></li>*@
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div><!--div container -->
+        </nav>
+
+        </div>
+    </div><!-- row-->
+
+        @RenderBody()
+
+    <div class="footer navbar-fixed-bottom" style="background-color:aliceblue">
+       <p>&copy;2014 Iyte thesis project...</p>
+    </div><!-- footer-->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

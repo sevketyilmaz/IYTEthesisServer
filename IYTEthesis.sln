@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IYTEthesis.Web", "IYTEthesis\IYTEthesis.Web.csproj", "{7B2EDCAC-E242-4DA9-8948-9B3A3E1419FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IYTEthesis.Data", "IYTEthesis.Data\IYTEthesis.Data.csproj", "{D0B67847-D15E-48D2-8AC8-BBFBBD72769E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IYTEthesis.Model", "IYTEthesis.Model\IYTEthesis.Model.csproj", "{E4382C87-1500-43E0-AB10-36052BCA5442}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B2EDCAC-E242-4DA9-8948-9B3A3E1419FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2EDCAC-E242-4DA9-8948-9B3A3E1419FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2EDCAC-E242-4DA9-8948-9B3A3E1419FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2EDCAC-E242-4DA9-8948-9B3A3E1419FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B67847-D15E-48D2-8AC8-BBFBBD72769E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B67847-D15E-48D2-8AC8-BBFBBD72769E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B67847-D15E-48D2-8AC8-BBFBBD72769E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B67847-D15E-48D2-8AC8-BBFBBD72769E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4382C87-1500-43E0-AB10-36052BCA5442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4382C87-1500-43E0-AB10-36052BCA5442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4382C87-1500-43E0-AB10-36052BCA5442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4382C87-1500-43E0-AB10-36052BCA5442}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

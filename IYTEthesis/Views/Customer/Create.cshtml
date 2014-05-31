@@ -1,0 +1,70 @@
+﻿@model IYTEthesis.Model.Customer
+@{
+    ViewBag.Title = "Create Customer";
+}
+
+<div class="Row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Create customer</h4>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+    
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.CustomerName) :</b>
+            @Html.EditorFor(model => model.CustomerName)
+            @Html.ValidationMessageFor(model => model.CustomerName)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Email) :</b>
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.GSM) :</b>
+            @Html.EditorFor(model => model.GSM)
+            @Html.ValidationMessageFor(model => model.GSM)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Lat) :</b>
+            @Html.EditorFor(model => model.Lat)
+            @Html.ValidationMessageFor(model => model.Lat)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Lng) :</b>
+            @Html.EditorFor(model => model.Lng)
+            @Html.ValidationMessageFor(model => model.Lng)
+        </div>
+
+        <div class="editor-label">
+            <b>@Html.LabelFor(model => model.Password) :</b>
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+            <p><input type="submit" value="Create" /></p>
+        </div>
+        
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+</div>
+
+</div><!--Row-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

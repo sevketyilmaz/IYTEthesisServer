@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Mobile Taxi";
+}
+
+@section headscript{
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+    <script type="text/javascript">
+        function initialize() {
+            var latitude = 38.27,
+                longitude = 27.26,
+                center = new google.maps.LatLng(latitude, longitude),
+                mapOptions = {
+                    center: center,
+                    zoom: 9,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    scrollwheel: true
+                };
+
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            window.setInterval(function () {
+                setMarkers(center, map);
+            }, 15000);
+            setMarkers(center, map);//initial call
+        }
+
+        function setMarkers(center, map) {
+            window.alert("alrm");
+            var json = (function () {
+                var json = null;
+                $.ajax({
+                    async: false,
+                    global: false,
+                    url: "http://svktylmz-001-site1.myasp.net/api/onlinevehicle",
+                    dataType: "json",
+                    success: function (data) {
+                        json = data;
+                    },
+                    error: function () { window.alert("fail"); }
+                });
+                return json;
+            })();
+
+            var image = {
+                url: 'content/images/TaxiAvailable.png'
+            };
+            //loop between each of the json elements
+            for (var i = 0, length = json.length; i < length; i++) {
+                var data = json[i];
+
+                latLng = new google.maps.LatLng(data.Lat, data.Lng);
+
+
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    icon: image
+                });
+                infoBox(map, marker, data);
+            }
+        }
+
+        function infoBox(map, marker, data) {
+            var infoWindow = new google.maps.InfoWindow();
+            // Attaching a click event to the current marker
+            google.maps.event.addListener(marker, "click", function (e) {
+                infoWindow.setContent("Test");
+                infoWindow.open(map, marker);
+            });
+
+            // Creating a closure to retain the correct data 
+            // Note how I pass the current data in the loop into the closure (marker, data)
+            (function (marker, data) {
+                // Attaching a click event to the current marker
+                google.maps.event.addListener(marker, "click", function (e) {
+                    infoWindow.setContent("TEst");
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+}
+
+<div class="col-lg-1">
+</div>
+
+<div class="col-lg-10" style="background-color: Background">
+    <div id="map-canvas">...</div>
+</div>
+
+<div class="col-lg-1">
+</div>

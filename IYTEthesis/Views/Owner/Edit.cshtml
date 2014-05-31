@@ -1,0 +1,54 @@
+﻿@model IYTEthesis.Model.Owner
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="Row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Edit owner</h4>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        @Html.HiddenFor(model => model.OwnerId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerName) :  
+            @Html.EditorFor(model => model.OwnerName)
+            @Html.ValidationMessageFor(model => model.OwnerName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email) :
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GSM) :
+            @Html.EditorFor(model => model.GSM)
+            @Html.ValidationMessageFor(model => model.GSM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password) :
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+            <p><input type="submit" value="Save" /></p>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </fieldset>
+}
+</div>
+
+</div><!--Row-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

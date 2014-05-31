@@ -1,0 +1,61 @@
+﻿@model IEnumerable<IYTEthesis.Model.Driver>
+@{
+    ViewBag.Title = "Driver's page";
+}
+
+<div class="row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Driver's page</h4>
+    <p>@Html.ActionLink("Create New", "Create")</p>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DriverName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GSM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DriverLicence)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DriverName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GSM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DriverLicence)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DriverId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DriverId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DriverId })
+        </td>
+    </tr>
+}
+
+</table>
+
+</div>
+<div class="col-lg-1">.</div>
+
+
+</div><!-- ROW -->

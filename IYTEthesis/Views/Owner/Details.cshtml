@@ -1,0 +1,36 @@
+﻿@model IYTEthesis.Model.Owner
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="Row">
+<div class="col-lg-1">.</div>
+<div class="col-lg-1" style="background-color: aliceblue">    
+    <h4>Owner's details</h4>
+</div>
+
+<div class="col-lg-9" style="background-color: white">
+
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.OwnerName) : </b> @Html.DisplayFor(model => model.OwnerName)
+    </div>
+
+    <div class="display-label">
+        <b>@Html.DisplayNameFor(model => model.Email) : </b> @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         <b>@Html.DisplayNameFor(model => model.GSM) : </b> @Html.DisplayFor(model => model.GSM)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OwnerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+</div>
+
+</div><!-- Row-->
